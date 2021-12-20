@@ -2,6 +2,7 @@ import { Typography, Button, Grid } from '@mui/material';
 import React from 'react';
 
 const Banner = () => {
+     
      return (
           <div>
                <Grid container spacing={2}>
@@ -18,11 +19,9 @@ const Banner = () => {
                          <Button variant="contained">View all course</Button>
                     </Grid>
                     <Grid item xs={12} md={6}>
-
+                         <img src="https://i.ibb.co/HdHJqXv/banner.jpg" width="500px" height="500px" alt="" />
                     </Grid>
                </Grid>
-
-
           </div>
      );
 };

@@ -6,8 +6,36 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useTheme } from 'styled-components';
+import { makeStyles } from '@mui/material';
 
 const Header = () => {
+     /* const theme = useTheme();
+     const useStyle = makeStyles({
+          navItem: {
+               textDecoration: 'none',
+               color: 'black'
+          },
+
+          navIcon: {
+               [theme.breakpoints.up('sm')]: {
+                    display: 'none',
+
+               }
+          },
+          navItemContain: {
+               [theme.breakpoints.down('sm')]: {
+                    display: 'none',
+
+               }
+          },
+          navLogo: {
+               [theme.breakpoints.down('sm')]: {
+                    textAlign: 'right'
+               }
+          }
+     }); */
+
      return (
           <Box sx={{ flexGrow: 1 }}>
                <AppBar position="static">
