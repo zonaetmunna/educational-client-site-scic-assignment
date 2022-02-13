@@ -8,8 +8,11 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from 'styled-components';
 import { makeStyles } from '@mui/material';
+import { Link } from 'react-router-dom';
+import useAuth from '../../../../Hooks/useAuth';
 
 const Header = () => {
+     const { user, logOut } = useAuth();
      /* const theme = useTheme();
      const useStyle = makeStyles({
           navItem: {
@@ -52,7 +55,7 @@ const Header = () => {
                          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                               News
                          </Typography>
-                         <Button color="inherit">Login</Button>
+                         <Button color="inherit"><Link to="/login">Login</Link></Button>
                     </Toolbar>
                </AppBar>
           </Box>

@@ -12,7 +12,7 @@ const Services = () => {
                image: 'https://i.ibb.co/XtjRm1H/1.jpg'
 
           }
-     ]
+     ];
 
 
      return (
