@@ -1,13 +1,14 @@
-import { Button, Container, Grid, TextField, Typography } from '@mui/material';
+import { Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
 const Register = () => {
-     const { registerUser } = useAuth();
+     const { registerUser, isLoading } = useAuth();
      // state
      const { loginData, setLoginData } = useState({});
+     const navigate = useNavigate();
 
 
      // handle input change
@@ -25,14 +26,14 @@ const Register = () => {
           if (loginData.password !== loginData.password2) {
                alert('please right password')
           }
-          registerUser(loginData.name, loginData.email, loginData.password)
+          registerUser(loginData.email, loginData.password, loginData.name, navigate)
      }
      return (
           <Container>
                <Grid container spacing={2}>
                     <Typography variant='h4'>Login</Typography>
                     <Grid item xs={12} md={4}>
-                         <form onSubmit={handleSubmit} >
+                         {!isLoading && <form onSubmit={handleSubmit} >
                               <TextField
                                    sx={{ m: 1 }}
                                    id="standard-basic"
@@ -77,7 +78,9 @@ const Register = () => {
                               <Button sx={{ m: 1 }} variant="contained" type='submit'>Login</Button>
 
 
-                         </form>
+                         </form>}
+                         {isLoading && <CircularProgress />
+                         }
                          <Link to="/login">Already have account ,please login</Link>
                     </Grid>
                     <Grid item xs={12} md={8}>
